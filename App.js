@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { useFonts } from "expo-font"
+import LoginScreen from './src/screens/LoginScreen';
+import InitialScreen from './src/screens/InitialScreen';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  
+  const [userStatus, setUserStatus] = useState("initial") 
+
+
+  const [fontsLoaded] = useFonts({
+    AntonRegular: require("./assets/fonts/Anton-Regular.ttf"),
+    OswaldRegular: require("./assets/fonts/Oswald-Regular.ttf")
+  })
+
+if(!fontsLoaded){
+    return null
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+if(userStatus == "initial"){
+  return <InitialScreen handleUserStatus={()=> setUserStatus("login")} headingFont={"AntonRegular"}/>;
+}
+
+if(userStatus == "login"){
+  return <LoginScreen handleUserStatus={()=> setUserStatus("initial")} primaryFont={"OswaldRegular"}/>;
+}
+
+}
