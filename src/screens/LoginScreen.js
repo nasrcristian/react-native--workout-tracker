@@ -1,21 +1,24 @@
-import {SafeAreaView, StyleSheet, Text,} from "react-native";
-import React from "react";
+import {View, StyleSheet, Text, SafeAreaView} from "react-native";
+import React, { useContext } from "react";
 import LoginTextInput from "../components/LoginTextInput";
 import LoginButton from "../components/LoginButton";
 import colors from "../constants/colors";
 import sizes from "../constants/sizes";
+import { FontContext } from "../context/fonts.context";
 
-const LoginScreen = ({handleUserStatus, primaryFont}) => {
+const LoginScreen = () => {
     /*
         Renderiza la pantalla de inicio de sesión y permite pasar a la página de home (sin validación actualmente).
     */
 
+    const fontsLoaded = useContext(FontContext)
+
     return (
         <SafeAreaView style={styles.loginScreenContainer}>
-            <Text style={{...styles.heading, fontFamily:primaryFont}}>Log In</Text>
+            <Text style={styles.heading}>Log In</Text>
             <LoginTextInput placeholder="E-mail" keyboardType="email-address" autoComplete="email" secureTextEntry={false}/>
             <LoginTextInput placeholder="Password" autoComplete="current-password" secureTextEntry={true}/>
-            <LoginButton title={"Log in"} color={"color"} onPress={handleUserStatus} newStyles={styles.loginButton}/>
+            <LoginButton title={"Log in"} color={"color"} newStyles={styles.loginButton}/>
         </SafeAreaView>
     );
 };
@@ -31,7 +34,8 @@ const styles = StyleSheet.create({
     },
     heading:{
         fontSize:(sizes.screenWidth / 6),
-        marginLeft:5
+        marginLeft:5,
+        fontFamily:"OswaldRegular"
     },
     loginButton:{
         width:150,

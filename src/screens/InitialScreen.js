@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, Text, SafeAreaView, View, ImageBackground} from 'react-native'
-import { useFonts } from "expo-font"
 import OnBoardingButton from "../components/LoginButton"
 import colors from "../constants/colors"
 import sizes from '../constants/sizes'
+import { FontContext } from '../context/fonts.context'
 
 
-const OnBoardingScreen = ({handleUserStatus, headingFont}) => {
+const InitialScreen = ({navigation}) => {
+
+    const fontsLoaded = useContext(FontContext)
 
     // Render de la pantalla de onBoarding con la opción de Log In y la opción de Create an account(sin uso hasta crear una screen)
 
@@ -14,19 +16,19 @@ return (
     <ImageBackground source={require("../../assets/iron-man.webp")} resizeMode="cover" style={styles.image}>
         <SafeAreaView style={styles.container}>
             <View style={styles.heading}>
-                <Text style={{...styles.headingText, fontFamily:headingFont}}>Welcome to JUGGERNAUT</Text>
-                <Text style={{...styles.subtitleText, fontFamily:headingFont}}>A tool to track your steps in the journey to strength</Text>
+                <Text style={styles.headingText}>Welcome to JUGGERNAUT</Text>
+                <Text style={styles.subtitleText}>A tool to track your steps in the journey to strength</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <OnBoardingButton title="Create an account" color={colors.blue}/>
-                <OnBoardingButton title="Log in" color={colors.blue} onPress={handleUserStatus} newStyles={{backgroundColor: colors.orangeRed}}/>
+                <OnBoardingButton title="Create an account" color={colors.blue} onPress={()=> navigation.navigate("Sing up")}/>
+                <OnBoardingButton title="Log in" color={colors.blue} onPress={()=> navigation.navigate("Log in")} newStyles={{backgroundColor: colors.orangeRed}}/>
             </View>
         </SafeAreaView>
     </ImageBackground>
 )
 }
 
-export default OnBoardingScreen
+export default InitialScreen
 
 
 
@@ -41,15 +43,17 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:"flex-end",
         alignItems:"center",
+        
     },
     headingText:{
-        fontSize: 60,
+        fontSize: sizes.screenWidth / 6.8,
         color: colors.white,
         opacity:0.8,
-        textAlign:"center"
+        textAlign:"center",
+        fontFamily: "AntonRegular"
     },
     subtitleText:{
-        fontSize: 15,
+        fontSize: sizes.screenWidth / 25,
         color: colors.white,
         opacity:0.5,
         textAlign:"center",
@@ -59,6 +63,7 @@ const styles = StyleSheet.create({
         },
         shadowRadius: 1, 
         shadowOpacity: 1,
+        fontFamily: "AntonRegular"
     },
     image:{
         flex:1,
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
     buttonsContainer:{
         flex:1,
         justifyContent:"flex-end",
-        marginBottom: 90,
+        marginBottom: "20%",
         width:sizes.screenWidth,
         alignItems:"center"
     }

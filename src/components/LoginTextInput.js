@@ -2,7 +2,7 @@ import { TextInput, StyleSheet } from "react-native";
 import React from "react";
 import colors from "../constants/colors";
 
-const LoginTextInput = ({placeholder, keyboardType, autoComplete, secureTextEntry}) => {
+const LoginTextInput = ({placeholder, keyboardType, autoComplete, secureTextEntry, newStyles}) => {
   return (
     <TextInput
       placeholder={placeholder}
@@ -10,9 +10,9 @@ const LoginTextInput = ({placeholder, keyboardType, autoComplete, secureTextEntr
       autoComplete={autoComplete}
       keyboardType={keyboardType}
       autoCorrect={false}
-      style={styles.loginInput}
       caretHidden={true}
       secureTextEntry={secureTextEntry}
+      style={{...styles.loginInput, ...newStyles}}
     />
   );
 };
