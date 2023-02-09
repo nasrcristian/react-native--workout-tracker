@@ -1,12 +1,14 @@
-import {View, StyleSheet, Text, SafeAreaView} from "react-native";
+import {View, StyleSheet, Pressable, Keyboard, Text} from "react-native";
 import React, { useContext } from "react";
-import LoginTextInput from "../components/LoginTextInput";
-import LoginButton from "../components/LoginButton";
+import FormTextInput from "../components/FormTextInput";
+import FormButton from "../components/FormButton";
 import colors from "../constants/colors";
 import sizes from "../constants/sizes";
 import { FontContext } from "../context/fonts.context";
+import FormContainer from "../components/FormContainer";
+import FormHeadingText from "../components/FormHeadingText";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     /*
         Renderiza la pantalla de inicio de sesión y permite pasar a la página de home (sin validación actualmente).
     */
@@ -14,12 +16,27 @@ const LoginScreen = () => {
     const fontsLoaded = useContext(FontContext)
 
     return (
-        <SafeAreaView style={styles.loginScreenContainer}>
-            <Text style={styles.heading}>Log In</Text>
-            <LoginTextInput placeholder="E-mail" keyboardType="email-address" autoComplete="email" secureTextEntry={false}/>
-            <LoginTextInput placeholder="Password" autoComplete="current-password" secureTextEntry={true}/>
-            <LoginButton title={"Log in"} color={"color"} newStyles={styles.loginButton}/>
-        </SafeAreaView>
+        <FormContainer>
+            <Pressable onPress={()=> Keyboard.dismiss()} style={styles.container}>
+                <FormHeadingText text="Log In"/>
+                <View>   
+                    <FormTextInput placeholder="E-mail" keyboardType="email-address" autoComplete="email" secureTextEntry={false} newStyles={styles.textInput}/>
+                    <FormTextInput placeholder="Password" autoComplete="current-password" secureTextEntry={true} newStyles={styles.textInput}/>
+                </View>
+                <View style={{ marginBottom:(sizes.screenHeight / 7)}}>
+                    <FormButton title={"Log in"} color={colors.black} newStyles={styles.loginButton}/>
+                </View>
+                <View style={styles.subtitleContainer}>
+                    <Text style={styles.subtitleText}>Forgot password?</Text>
+                    <View style={{flexDirection: "row"}}>
+                        <Text style={styles.subtitleText}>New here? </Text>
+                        <Pressable onPress={()=> navigation.navigate("Sing up")}>
+                            <Text style={{...styles.subtitleText, textDecorationLine: "underline"}}>Create an account!</Text>
+                        </Pressable>
+                    </View>
+                </View>
+            </Pressable>
+        </FormContainer>
     );
 };
 
@@ -27,25 +44,33 @@ export default LoginScreen;
 
 
 const styles = StyleSheet.create({
-    loginScreenContainer:{
-        flex: 1,
-        backgroundColor:colors.mistyRose,
-        justifyContent: "center",
+    container:{
+        alignItems: "center", 
+        justifyContent:"center",
+        flex:1
     },
-    heading:{
-        fontSize:(sizes.screenWidth / 6),
-        marginLeft:5,
-        fontFamily:"OswaldRegular"
+    textInput:{
+        width: "95%",
+        alignSelf: "center",
+        marginVertical: "2.3%",
     },
     loginButton:{
-        width:150,
-        marginVertical:4,
+        width:sizes.screenWidth * 0.6,
         backgroundColor:colors.orangeRed,
-        marginBottom:(sizes.screenHeight / 4),
-        marginLeft:5,
+        marginTop:5,
+        alignSelf:"center",
         shadowRadius:5,
         shadowOffset:{
-            width:0, height: 2
+            width:1, height: 2
         }
+    },
+    subtitleContainer:{
+        flexDirection: "row",
+        justifyContent:"space-around",
+        width:"80%"
+    },
+    subtitleText:{
+        fontFamily:"OswaldRegular",
+        color:colors.lightGrey
     }
 });

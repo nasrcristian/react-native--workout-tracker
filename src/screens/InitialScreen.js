@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { StyleSheet, Text, SafeAreaView, View, ImageBackground} from 'react-native'
-import OnBoardingButton from "../components/LoginButton"
+import OnBoardingButton from "../components/FormButton"
 import colors from "../constants/colors"
 import sizes from '../constants/sizes'
 import { FontContext } from '../context/fonts.context'
@@ -20,8 +20,8 @@ return (
                 <Text style={styles.subtitleText}>A tool to track your steps in the journey to strength</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <OnBoardingButton title="Create an account" color={colors.blue} onPress={()=> navigation.navigate("Sing up")}/>
-                <OnBoardingButton title="Log in" color={colors.blue} onPress={()=> navigation.navigate("Log in")} newStyles={{backgroundColor: colors.orangeRed}}/>
+                <OnBoardingButton title="Create an account" color={colors.blueGreen} onPress={()=> navigation.navigate("Sing up")}/>
+                <OnBoardingButton title="Log in" color={colors.blueGreen} onPress={()=> navigation.navigate("Log in")} newStyles={{backgroundColor: colors.orangeRed}}/>
             </View>
         </SafeAreaView>
     </ImageBackground>
