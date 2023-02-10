@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { StyleSheet, Text, SafeAreaView, View, ImageBackground} from 'react-native'
-import OnBoardingButton from "../components/FormButton"
-import colors from "../constants/colors"
-import sizes from '../constants/sizes'
-import { FontContext } from '../context/fonts.context'
+import OnBoardingButton from "../../components/FormButton"
+import colors from "../../constants/colors"
+import sizes from '../../constants/sizes'
+import { FontContext } from '../../context/fonts.context'
 
 
 const InitialScreen = ({navigation}) => {
@@ -13,7 +13,7 @@ const InitialScreen = ({navigation}) => {
     // Render de la pantalla de onBoarding con la opción de Log In y la opción de Create an account(sin uso hasta crear una screen)
 
 return (
-    <ImageBackground source={require("../../assets/iron-man.webp")} resizeMode="cover" style={styles.image}>
+    <ImageBackground source={require("../../../assets/iron-man.webp")} resizeMode="cover" style={styles.image}>
         <SafeAreaView style={styles.container}>
             <View style={styles.heading}>
                 <Text style={styles.headingText}>Welcome to JUGGERNAUT</Text>

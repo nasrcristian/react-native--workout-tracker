@@ -1,15 +1,15 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import colors from '../constants/colors';
 
-import InitialScreen from "../screens/InitialScreen";
-import LogInScreen from "../screens/LogInScreen";
-import SingUpScreen from "../screens/SingUpScreen";
+import InitialScreen from "../screens/FormScreens/InitialScreen";
+import LogInScreen from "../screens/FormScreens/LogInScreen";
+import SingUpScreen from "../screens/FormScreens/SingUpScreen";
 
 
 
 const Stack = createNativeStackNavigator()
 
-export default LoginNavigator = ()=>{
+export default LoginNavigator = ({isLogged})=>{
 
 
 

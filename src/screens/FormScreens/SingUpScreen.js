@@ -9,13 +9,13 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import colors from "../constants/colors";
-import sizes from "../constants/sizes";
-import { FontContext } from "../context/fonts.context";
-import FormContainer from "../components/FormContainer";
-import FormHeadingText from "../components/FormHeadingText";
-import FormTextInput from "../components/FormTextInput";
-import FormButton from "../components/FormButton";
+import colors from "../../constants/colors";
+import sizes from "../../constants/sizes";
+import { FontContext } from "../../context/fonts.context";
+import FormContainer from "../../components/FormContainer";
+import FormHeadingText from "../../components/FormHeadingText";
+import FormTextInput from "../../components/FormTextInput";
+import FormButton from "../../components/FormButton";
 
 const SingUpScreen = ({navigation}) => {
   const fontsLoaded = useContext(FontContext);
