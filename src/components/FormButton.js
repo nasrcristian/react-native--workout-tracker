@@ -1,7 +1,6 @@
 import { Button, StyleSheet, View} from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import colors from '../constants/colors'
-import { FontContext } from '../context/fonts.context'
 
 const FormButton = ({title, color, onPress, newStyles}) => {
 

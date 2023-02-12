@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useFonts } from "expo-font";
 
-export const FontContext = createContext(null)
+export const FontContext = createContext()
 
 export function FontContextProvider({children}){
     const [fontsLoaded] = useFonts({
@@ -17,3 +17,5 @@ export function FontContextProvider({children}){
         </FontContext.Provider>
     )
 }
+
+export const useFontContext = () => useContext(FontContext)

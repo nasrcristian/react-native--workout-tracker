@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { ImageBackground, StyleSheet, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import colors from '../constants/colors'
 import sizes from '../constants/sizes'
-import { FontContext } from '../context/fonts.context'
+import {useFontContext } from '../context/fonts.context'
 
 const FormContainer = ({children}) => {
-    const fontsLoaded = useContext(FontContext)
+    const fontsLoaded = useFontContext
 
 
     return (

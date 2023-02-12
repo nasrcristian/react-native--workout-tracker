@@ -1,21 +1,23 @@
 import { View, StyleSheet, Pressable, Keyboard, Text } from "react-native";
-import React, { useContext } from "react";
+import React from "react";
 import FormTextInput from "../../components/FormTextInput";
 import FormButton from "../../components/FormButton";
 import colors from "../../constants/colors";
 import sizes from "../../constants/sizes";
-import { FontContext } from "../../context/fonts.context";
+import { useFontContext } from "../../context/fonts.context";
 import FormContainer from "../../components/FormContainer";
 import FormHeadingText from "../../components/FormHeadingText";
-import { UserContext } from "../../context/user.context";
+import { useUserLogin } from "../../context/user.context";
 
 const LoginScreen = ({ navigation }) => {
   /*
         Renderiza la pantalla de inicio de sesión y permite pasar a la página de home (sin validación actualmente).
     */
 
-  const fontsLoaded = useContext(FontContext);
-  const { setIsLogged } = useContext(UserContext);
+  const fontsLoaded = useFontContext
+  const { setIsLogged } = useUserLogin()
+
+
 
 
   return (

@@ -1,14 +1,14 @@
 import { Text, TextInput, StyleSheet, KeyboardAvoidingView, Platform, ScrollView} from "react-native";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import colors from "../constants/colors";
 import sizes from "../constants/sizes";
-import { FontContext } from "../context/fonts.context";
+import { useFontContext } from "../context/fonts.context";
 
 const FormTextInput = ({placeholder, keyboardType, autoComplete, secureTextEntry, newStyles}) => {
 
   const [isFocused, setIsFocused] = useState(false)
 
-  const fontsLoaded = useContext(FontContext)
+  const fontsLoaded = useFontContext
 
   return (
         <TextInput
