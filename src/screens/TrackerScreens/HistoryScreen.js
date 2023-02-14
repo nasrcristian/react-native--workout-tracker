@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const HistoryScreen = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <Text>HistoryScreen</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
 export default HistoryScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor: "grey",
+    alignItems:"center",
+    justifyContent:"center",
+  }
+})

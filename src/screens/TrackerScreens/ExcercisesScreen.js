@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const ExcercisesScreen = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <Text>ExcercisesScreen</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
 export default ExcercisesScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor: "crimson",
+    alignItems:"center",
+    justifyContent:"center",
+  }
+})

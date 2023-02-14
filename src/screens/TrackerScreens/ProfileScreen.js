@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 import { useUserLogin } from '../../context/user.context'
 
@@ -7,13 +7,20 @@ const ProfileScreen = () => {
   const { setIsLogged } = useUserLogin()
 
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <Text>ProfileScreen</Text>
       <Button title="Log out" onPress={()=> setIsLogged(false)}/>
-    </View>
+    </SafeAreaView>
   )
 }
 
 export default ProfileScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor: "green",
+    alignItems:"center",
+    justifyContent:"center",
+  }
+})
