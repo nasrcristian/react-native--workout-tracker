@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  View,
-  ImageBackground,
-} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import OnBoardingButton from '../../components/FormButton';
 import colors from '../../constants/colors';

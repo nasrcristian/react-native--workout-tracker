@@ -1,5 +1,6 @@
-import { Button, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { Button, StyleSheet, Text } from 'react-native';
 import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useUserLogin } from '../../context/user.context';
 

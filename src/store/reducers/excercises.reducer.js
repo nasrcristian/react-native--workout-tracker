@@ -33,62 +33,6 @@ const initialState = [
     category: 'Legs',
     about: 'Lorem ipsum sit dolor',
   },
-  {
-    id: 5,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 6,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 7,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 8,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 9,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 10,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
-  {
-    id: 11,
-    title: 'Box Jump',
-    image:
-      'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
-    category: 'Legs',
-    about: 'Lorem ipsum sit dolor',
-  },
 ];
 
 export const ExcercisesReducer = (state = initialState, action) => {
