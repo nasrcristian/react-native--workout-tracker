@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,70 +8,78 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
-} from "react-native";
-import colors from "../../constants/colors";
-import sizes from "../../constants/sizes";
-import { useFontContext } from "../../context/fonts.context";
-import FormContainer from "../../components/FormContainer";
-import FormHeadingText from "../../components/FormHeadingText";
-import FormTextInput from "../../components/FormTextInput";
-import FormButton from "../../components/FormButton";
+} from 'react-native';
 
-const SingUpScreen = ({navigation}) => {
-  const fontsLoaded = useFontContext
+import colors from '../../constants/colors';
+import sizes from '../../constants/sizes';
+import FormContainer from '../../components/FormContainer';
+import FormHeadingText from '../../components/FormHeadingText';
+import FormTextInput from '../../components/FormTextInput';
+import FormButton from '../../components/FormButton';
 
+const SingUpScreen = ({ navigation }) => {
   return (
     <FormContainer>
       <ScrollView
         contentContainerStyle={{
           flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
-          <Pressable
-            onPress={() => Keyboard.dismiss()}
-          >
+          <Pressable onPress={() => Keyboard.dismiss()}>
             <FormHeadingText text="Sing Up" />
             <FormTextInput
-              placeholder="Username"
               autoComplete="username"
-              secureTextEntry={false}
               newStyles={styles.textInput}
+              placeholder="Username"
+              secureTextEntry={false}
             />
             <FormTextInput
-              placeholder="E-mail"
-              keyboardType="email-address"
               autoComplete="email"
+              keyboardType="email-address"
+              newStyles={styles.textInput}
+              placeholder="E-mail"
               secureTextEntry={false}
-              newStyles={styles.textInput}
             />
             <FormTextInput
-              placeholder="Password"
-              autoComplete="new-password"
-              secureTextEntry={true}
-              newStyles={styles.textInput}
-            />
-            <FormTextInput
-              placeholder="Confirm password"
               autoComplete="off"
-              secureTextEntry={true}
               newStyles={styles.textInput}
+              placeholder="Password"
+              secureTextEntry={true}
+            />
+            <FormTextInput
+              autoComplete="off"
+              newStyles={styles.textInput}
+              placeholder="Confirm password"
+              secureTextEntry={true}
             />
             <FormButton
-              title={"Sing Up"}
               color={colors.black}
               newStyles={styles.singUpButton}
-              onPress={()=> navigation.navigate("Log in")}
+              title={'Sing Up'}
+              onPress={() => navigation.navigate('Log in')}
             />
-            <View style={{flexDirection: "row", justifyContent: "flex-end", width: "99%"}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                width: '99%',
+              }}
+            >
               <Text style={styles.subtitleText}>
-                By singing up you agree to our{" "} 
+                By singing up you agree to our{' '}
               </Text>
-              <Text style={{...styles.subtitleText, color: colors.lightBlue, textDecorationLine: "underline"}}>
+              <Text
+                style={{
+                  ...styles.subtitleText,
+                  color: colors.lightBlue,
+                  textDecorationLine: 'underline',
+                }}
+              >
                 Privacy Policy.
               </Text>
             </View>
@@ -86,24 +94,23 @@ export default SingUpScreen;
 
 const styles = StyleSheet.create({
   textInput: {
-    width: "99%",
-    marginVertical: "3%",
+    marginVertical: '3%',
   },
   singUpButton: {
-    width: "99%",
+    width: '90%',
     backgroundColor: colors.orangeRed,
     marginTop: 5,
-    alignSelf: "center",
+    alignSelf: 'center',
     shadowRadius: 5,
     shadowOffset: {
       width: 1,
       height: 2,
     },
   },
-  subtitleText:{
+  subtitleText: {
     fontSize: sizes.screenWidth / 25,
     color: colors.white,
-    opacity:0.8,
-    fontFamily: "OswaldRegular"
+    opacity: 0.8,
+    fontFamily: 'OswaldRegular',
   },
 });

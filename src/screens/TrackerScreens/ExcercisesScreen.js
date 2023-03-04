@@ -1,21 +1,33 @@
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
+
+import ExcerciseLabel from '../../components/ExcerciseLabel';
 
 const ExcercisesScreen = () => {
+  const excercises = useSelector((state) => state.excercises);
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>ExcercisesScreen</Text>
+      <FlatList
+        data={excercises}
+        keyExtractor={(excercise) => excercise.id}
+        renderItem={(excercise) => {
+          return <ExcerciseLabel excercise={excercise} />;
+        }}
+        style={{ flex: 1, margin: 20 }}
+      />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default ExcercisesScreen
+export default ExcercisesScreen;
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor: "crimson",
-    alignItems:"center",
-    justifyContent:"center",
-  }
-})
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#a3a3a3',
+  },
+});

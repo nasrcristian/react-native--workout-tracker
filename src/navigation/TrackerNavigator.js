@@ -1,89 +1,100 @@
-import { View, StyleSheet, Text } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons"
-import colors from "../constants/colors";
-
-import ProfileScreen from "../screens/TrackerScreens/ProfileScreen";
-import HistoryScreen from "../screens/TrackerScreens/HistoryScreen";
-import WorkoutScreen from "../screens/TrackerScreens/WorkoutScreen";
-import ExcercisesScreen from "../screens/TrackerScreens/ExcercisesScreen";
-import { useFontContext } from "../context/fonts.context";
+import colors from '../constants/colors';
+import ProfileScreen from '../screens/TrackerScreens/ProfileScreen';
+import HistoryScreen from '../screens/TrackerScreens/HistoryScreen';
+import WorkoutScreen from '../screens/TrackerScreens/WorkoutScreen';
+import ExcercisesScreen from '../screens/TrackerScreens/ExcercisesScreen';
+import sizes from '../constants/sizes';
 
 const Tab = createBottomTabNavigator();
-const fontsLoaded = useFontContext
 
-
-const RenderIcon = ({focused, icon}) =>{
-  return(
+const RenderIcon = ({ focused, icon }) => {
+  return (
     <View>
-      <MaterialCommunityIcons name={icon} size={25} color={focused? colors.red : colors.redPurple}/> 
+      <MaterialCommunityIcons
+        color={focused ? colors.red : colors.redPurple}
+        name={icon}
+        size={25}
+      />
     </View>
-  )
-}
+  );
+};
 
-const RenderLabel = ({focused, label}) =>{
-  return(
-    <Text style={{fontFamily:"AntonRegular", color: focused? colors.red: colors.redPurple, fontSize:12.5}}>{label}</Text>
-  )
-}
+const RenderLabel = ({ focused, label }) => {
+  return (
+    <Text
+      style={{
+        fontFamily: 'AntonRegular',
+        color: focused ? colors.red : colors.redPurple,
+        fontSize: 12.5,
+      }}
+    >
+      {label}
+    </Text>
+  );
+};
 
 const TrackerNavigator = () => {
   return (
-    <Tab.Navigator 
-      initialRouteName="New Workout"
+    <Tab.Navigator
+      initialRouteName="Excercises"
       screenOptions={{
-        headerShown: false,
         tabBarStyle: styles.tabBar,
+        headerShown: false,
       }}
-      >
-      <Tab.Screen 
-        name="Profile" 
-        component={ProfileScreen} 
+    >
+      <Tab.Screen
+        component={ProfileScreen}
+        name="Profile"
         options={{
-          tabBarIcon: ({focused}) => (
-            <RenderIcon focused={focused} icon="account"/>
+          tabBarIcon: ({ focused }) => (
+            <RenderIcon focused={focused} icon="account" />
           ),
-          tabBarLabel: ({focused})=>(
-            <RenderLabel focused={focused} label="Profile"/>
-          )
-        }}/>
-      <Tab.Screen 
-        name="History" 
+          tabBarLabel: ({ focused }) => (
+            <RenderLabel focused={focused} label="Profile" />
+          ),
+        }}
+      />
+      <Tab.Screen
         component={HistoryScreen}
+        name="History"
         options={{
-          tabBarIcon: ({focused}) => (
-            <RenderIcon focused={focused} icon="calendar-text"/>
+          tabBarIcon: ({ focused }) => (
+            <RenderIcon focused={focused} icon="calendar-text" />
           ),
-          tabBarLabel: ({focused})=>(
-            <RenderLabel focused={focused} label="History"/>
-          )
+          tabBarLabel: ({ focused }) => (
+            <RenderLabel focused={focused} label="History" />
+          ),
         }}
-        />
-      <Tab.Screen 
-        name="New Workout" 
+      />
+      <Tab.Screen
         component={WorkoutScreen}
+        name="New Workout"
         options={{
-          tabBarIcon: ({focused}) => (
-            <RenderIcon focused={focused} icon="plus"/>
+          tabBarIcon: ({ focused }) => (
+            <RenderIcon focused={focused} icon="plus" />
           ),
-          tabBarLabel: ({focused})=>(
-            <RenderLabel focused={focused} label="New Workout"/>
-          )
-        }} 
-        />
-      <Tab.Screen 
-        name="Excercises" 
-        component={ExcercisesScreen} 
-        options={{
-          tabBarIcon: ({focused}) => (
-            <RenderIcon focused={focused} icon="dumbbell"/>
+          tabBarLabel: ({ focused }) => (
+            <RenderLabel focused={focused} label="New Workout" />
           ),
-          tabBarLabel: ({focused})=>(
-            <RenderLabel focused={focused} label="Excercises"/>
-          )
         }}
-        />
+      />
+      <Tab.Screen
+        component={ExcercisesScreen}
+        name="Excercises"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <RenderIcon focused={focused} icon="dumbbell" />
+          ),
+          tabBarLabel: ({ focused }) => (
+            <RenderLabel focused={focused} label="Excercises" />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
@@ -91,12 +102,12 @@ const TrackerNavigator = () => {
 export default TrackerNavigator;
 
 const styles = StyleSheet.create({
-  tabBar:{
-    backgroundColor: colors.lightGrey + "55",
+  tabBar: {
+    backgroundColor: colors.mistyRose + '',
     shadowColor: colors.orangeRed,
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.5,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 1,
     shadowRadius: 1,
     elevation: 5,
-  }
-})
+  },
+});

@@ -1,13 +1,16 @@
-import { useUserLogin } from "../context/user.context";
-import LoginNavigator from "./LoginNavigator";
-import TrackerNavigator from "./TrackerNavigator";
+import React from 'react';
 
-export default function MainNavigator(){
-    const { isLogged } = useUserLogin()
+import { useUserLogin } from '../context/user.context';
 
-    if(!isLogged){
-        return <LoginNavigator/>
-    } else{
-        return <TrackerNavigator/>
-    }
+import LoginNavigator from './LoginNavigator';
+import TrackerNavigator from './TrackerNavigator';
+
+export default function MainNavigator() {
+  const { isLogged } = useUserLogin();
+
+  if (!isLogged) {
+    return <LoginNavigator />;
+  } else {
+    return <TrackerNavigator />;
+  }
 }
