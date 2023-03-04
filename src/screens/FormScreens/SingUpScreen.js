@@ -20,13 +20,7 @@ import FormButton from '../../components/FormButton';
 const SingUpScreen = ({ navigation }) => {
   return (
     <FormContainer>
-      <ScrollView
-        contentContainerStyle={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+      <ScrollView contentContainerStyle={styles.container}>
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
@@ -59,17 +53,11 @@ const SingUpScreen = ({ navigation }) => {
             />
             <FormButton
               color={colors.black}
-              newStyles={styles.singUpButton}
+              newContainerStyles={styles.singUpButton}
               title={'Sing Up'}
               onPress={() => navigation.navigate('Log in')}
             />
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-                width: '99%',
-              }}
-            >
+            <View style={styles.subtitleContainer}>
               <Text style={styles.subtitleText}>
                 By singing up you agree to our{' '}
               </Text>
@@ -93,11 +81,17 @@ const SingUpScreen = ({ navigation }) => {
 export default SingUpScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   textInput: {
     marginVertical: '3%',
   },
   singUpButton: {
     width: '90%',
+    height: '8%',
     backgroundColor: colors.orangeRed,
     marginTop: 5,
     alignSelf: 'center',
@@ -106,6 +100,11 @@ const styles = StyleSheet.create({
       width: 1,
       height: 2,
     },
+  },
+  subtitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '99%',
   },
   subtitleText: {
     fontSize: sizes.screenWidth / 25,

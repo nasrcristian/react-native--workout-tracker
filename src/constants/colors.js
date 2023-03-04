@@ -7,7 +7,7 @@ export default {
   purple: '#320E3B',
   lightBlue: '#4CA1E6',
   red: '#9A031E',
-  blueGreen: '#0F4C5C',
+  blueGreen: '#0E3B5C',
   redPurple: '#5F0F40',
   lightGrey: '#9BA2A2',
 };

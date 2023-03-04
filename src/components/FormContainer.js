@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.redPurple + '7f',
+    paddingBottom: sizes.windowHeight / 8,
   },
 });

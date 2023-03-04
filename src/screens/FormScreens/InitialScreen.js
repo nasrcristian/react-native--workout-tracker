@@ -29,13 +29,11 @@ const InitialScreen = ({ navigation }) => {
         </View>
         <View style={styles.buttonsContainer}>
           <OnBoardingButton
-            color={colors.blueGreen}
             title="Create an account"
             onPress={() => navigation.navigate('Sing up')}
           />
           <OnBoardingButton
-            color={colors.blueGreen}
-            newStyles={{ backgroundColor: colors.orangeRed }}
+            newContainerStyles={{ backgroundColor: colors.orangeRed }}
             title="Log in"
             onPress={() => navigation.navigate('Log in')}
           />

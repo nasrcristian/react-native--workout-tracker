@@ -4,10 +4,10 @@ import { Pressable, StyleSheet, Text } from 'react-native';
 import colors from '../constants/colors';
 import sizes from '../constants/sizes';
 
-const FormButton = ({ title, onPress, newStyles }) => {
+const FormButton = ({ title, onPress, newContainerStyles, newTextStyles }) => {
   return (
-    <Pressable style={{ ...styles.formButton, ...newStyles }}>
-      <Text style={styles.text} onPress={onPress}>
+    <Pressable style={{ ...styles.formButton, ...newContainerStyles }}>
+      <Text style={{ ...styles.text, ...newTextStyles }} onPress={onPress}>
         {title}
       </Text>
     </Pressable>
@@ -33,5 +33,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: sizes.screenWidth * 0.06,
     textAlign: 'center',
+    fontFamily: 'OswaldRegular',
+    justifySelf: 'center',
+    color: colors.blueGreen,
   },
 });

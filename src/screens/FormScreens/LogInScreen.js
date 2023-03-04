@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
         <View style={{ marginBottom: sizes.screenHeight / 7 }}>
           <FormButton
             color={colors.black}
-            newStyles={styles.loginButton}
+            newContainerStyles={styles.loginButton}
             title={'Log in'}
             onPress={() => setIsLogged(true)}
           />
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: sizes.screenWidth * 0.6,
     backgroundColor: colors.orangeRed,
+    height: sizes.screenHeight * 0.045,
     marginTop: 5,
     alignSelf: 'center',
     shadowRadius: 5,

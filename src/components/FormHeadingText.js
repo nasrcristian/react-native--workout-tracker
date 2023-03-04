@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     marginBottom: '5%',
     textDecorationLine: 'underline',
     fontFamily: 'AntonRegular',
-    marginLeft: '2%',
+    marginLeft: '5%',
     color: colors.mistyRose,
   },
 });
