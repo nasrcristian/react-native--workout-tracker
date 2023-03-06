@@ -5,12 +5,11 @@ import colors from '../constants/colors';
 import sizes from '../constants/sizes';
 
 import ExcerciseModal from './ExcerciseModal';
-
 const ExcerciseLabel = ({ excercise }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
-    <>
+    <View>
       <Pressable style={styles.container} onPress={() => setIsSelected(true)}>
         <Image source={{ uri: excercise.image }} style={styles.image} />
         <Text style={styles.text}> {excercise.title} </Text>
@@ -21,7 +20,7 @@ const ExcerciseLabel = ({ excercise }) => {
         isSelected={isSelected}
         setIsSelected={setIsSelected}
       />
-    </>
+    </View>
   );
 };
 

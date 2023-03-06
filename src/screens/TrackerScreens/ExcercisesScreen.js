@@ -1,6 +1,12 @@
 import React from 'react';
-import { StyleSheet, SectionList, Text, View, Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  StyleSheet,
+  SectionList,
+  Text,
+  View,
+  Button,
+  SafeAreaView,
+} from 'react-native';
 import { useSelector } from 'react-redux';
 
 import ExcerciseLabel from '../../components/ExcerciseLabel';

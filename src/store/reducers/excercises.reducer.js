@@ -14,7 +14,7 @@ const initialState = [
       },
       {
         id: 2,
-        title: 'Mi nuevo ejercicio  genial',
+        title: 'Mi nuevo ejercicio genial',
         image:
           'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
 
@@ -52,6 +52,14 @@ const initialState = [
       {
         id: 5,
         title: 'Box Jump',
+        image:
+          'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
+        about: 'Lorem ipsum sit dolor',
+      },
+      {
+        id: 6,
+        title:
+          'El nuevo super ejercicio mistico del que nadie se esperaba que supere tantos caracteres',
         image:
           'https://imgs.search.brave.com/rrk3joDmeDCDUUvq21sDWhx_hVSv1UfIm85SiILNN_4/rs:fit:800:800:1/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9kdW1i/YmVsbC1pc29sYXRl/ZC13aGl0ZS1iYWNr/Z3JvdW5kLWR1bWJi/ZWxsLTE3NTUyOTY3/Ni5qcGc',
         about: 'Lorem ipsum sit dolor',

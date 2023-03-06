@@ -1,18 +1,25 @@
-import { StyleSheet, Modal } from 'react-native';
+import { StyleSheet, Modal, View } from 'react-native';
 import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { editExcercise } from '../store/actions/excercises.action';
+import colors from '../constants/colors';
+import sizes from '../constants/sizes';
 
 import ModalHeader from './ModalHeader';
 
 const ExcerciseModal = ({ excercise, setIsSelected, isSelected }) => {
   return (
-    <Modal style={styles.container} transparent={false} visible={isSelected}>
-      <ModalHeader
-        hideModal={() => setIsSelected(false)}
-        title={excercise.title}
-      />
-      {/* <ModalDetailsNavigator/>  dispatch.(editExcercise)*/}
+    <Modal animationType={'fade'} transparent={true} visible={isSelected}>
+      <SafeAreaView style={styles.modal}>
+        <View style={styles.container}>
+          <ModalHeader
+            hideModal={() => setIsSelected(false)}
+            title={excercise.title}
+          />
+          {/* <ModalDetailsNavigator/>  dispatch.(editExcercise)*/}
+        </View>
+      </SafeAreaView>
     </Modal>
   );
 };
@@ -20,9 +27,15 @@ const ExcerciseModal = ({ excercise, setIsSelected, isSelected }) => {
 export default ExcerciseModal;
 
 const styles = StyleSheet.create({
+  modal: {
+    flex: 1,
+    backgroundColor: colors.black + 'dd',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
-    height: 300,
-    width: 80,
-    backgroundColor: '#333',
+    backgroundColor: colors.purple,
+    width: sizes.screenWidth * 0.8,
+    height: sizes.screenHeight * 0.7,
   },
 });
