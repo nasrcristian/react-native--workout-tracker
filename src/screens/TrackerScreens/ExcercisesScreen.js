@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 import ExcerciseLabel from '../../components/ExcerciseLabel';
 import ExcercisesCategoryHeader from '../../components/ExcercisesCategoryHeader';
+import colors from '../../constants/colors';
 
 const ExcercisesScreen = () => {
   const excercises = useSelector((state) => state.excercises);
