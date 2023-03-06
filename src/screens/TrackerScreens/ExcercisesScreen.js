@@ -1,22 +1,35 @@
 import React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, SectionList, Text, View, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useSelector } from 'react-redux';
 
 import ExcerciseLabel from '../../components/ExcerciseLabel';
+import ExcercisesCategoryHeader from '../../components/ExcercisesCategoryHeader';
 
 const ExcercisesScreen = () => {
   const excercises = useSelector((state) => state.excercises);
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={excercises}
-        keyExtractor={(excercise) => excercise.id}
-        renderItem={(excercise) => {
-          return <ExcerciseLabel excercise={excercise} />;
+      <SectionList
+        contentContainerStyle={{ alignItems: 'flex-start' }}
+        keyExtractor={(item) => {
+          return item.id.toString();
         }}
-        style={{ flex: 1, margin: 20 }}
+        renderItem={({ item }) => {
+          return <ExcerciseLabel excercise={item} />;
+        }}
+        renderSectionHeader={({ section }) => (
+          <ExcercisesCategoryHeader section={section} />
+        )}
+        sections={excercises.map((item) => {
+          return {
+            key: item.category,
+            title: item.category,
+            data: item.excercises,
+          };
+        })}
+        style={{ flex: 1 }}
       />
     </SafeAreaView>
   );
@@ -27,8 +40,6 @@ export default ExcercisesScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#a3a3a3',
+    backgroundColor: colors.salmon,
   },
 });

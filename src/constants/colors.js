@@ -10,4 +10,5 @@ export default {
   blueGreen: '#0E3B5C',
   redPurple: '#5F0F40',
   lightGrey: '#9BA2A2',
+  salmon: '#F2C6BB',
 };

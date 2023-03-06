@@ -8,9 +8,10 @@ import TrackerNavigator from './TrackerNavigator';
 export default function MainNavigator() {
   const { isLogged } = useUserLogin();
 
-  if (!isLogged) {
-    return <LoginNavigator />;
-  } else {
-    return <TrackerNavigator />;
-  }
+  // if (!isLogged) {
+  //   return <LoginNavigator />;
+  // } else {
+  //   return <TrackerNavigator />;
+  // }
+  return <TrackerNavigator />;
 }

@@ -103,11 +103,12 @@ export default TrackerNavigator;
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.mistyRose + '',
-    shadowColor: colors.orangeRed,
+    backgroundColor: colors.mistyRose,
+    borderTopColor: colors.lightGrey,
+    borderTopWidth: 2,
+    shadowColor: colors.lightGrey,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 1,
-    elevation: 5,
   },
 });
